@@ -6,7 +6,7 @@
 /*   By: kyuzu <kyuzu@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 09:52:37 by kyuzu             #+#    #+#             */
-/*   Updated: 2022/05/27 11:05:41 by kyuzu            ###   ########.fr       */
+/*   Updated: 2022/05/27 11:34:13 by kyuzu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,42 +118,47 @@ char	*free_memory(char *save, char *buff, char *str, int flag)
 
 // int	main(int argc, char *argv[])
 // {
-// 	int		fd;
-// 	int		i;
-// 	char	*s;
+// 	int		fd0;
+// 	int		fd1;
+// 	int		fd2;
+// 	char	*s0;
+// 	char	*s1;
+// 	char	*s2;
 
 // 	if (BUFFER_SIZE <= 0)
 // 		return (0);
 // 	if (argc == 1)
 // 	{
-// 		fd = 1;
+// 		fd0 = 1;
 // 		while (1)
 // 		{
-// 			s = get_next_line(fd);
-// 			if (s == NULL)
+// 			s0 = get_next_line(fd0);
+// 			if (s0 == NULL)
 // 				break ;
-// 			printf("%s", s);
-// 			free(s);
+// 			printf("%s", s0);
+// 			free(s0);
 // 		}
 // 	}
 // 	else
 // 	{
-// 		i = 1;
-// 		while (i < argc)
+// 		fd1 = open(argv[1], O_RDONLY);
+// 		fd2 = open(argv[2], O_RDONLY);
+// 		while (1)
 // 		{
-// 			fd = open(argv[i], O_RDONLY);
-// 			while (1)
-// 			{
-// 				s = get_next_line(fd);
-// 				if (s == NULL)
-// 					break ;
-// 				printf("%s", s);
-// 				free(s);
-// 			}
-// 			printf("\n");
-// 			close(fd);
-// 			i++;
+// 			s1 = get_next_line(fd1);
+// 			if (s1 == NULL)
+// 				break ;
+// 			s2 = get_next_line(fd2);
+// 			if (s2 == NULL)
+// 				break ;
+// 			printf("%s", s1);
+// 			printf("%s", s2);
+// 			free(s1);
+// 			free(s2);
 // 		}
+// 		printf("\n");
+// 		close(fd1);
+// 		close(fd2);
 // 	}
 // 	return (0);
 // }
