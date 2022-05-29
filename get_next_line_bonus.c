@@ -6,11 +6,11 @@
 /*   By: kyuzu <kyuzu@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 09:52:37 by kyuzu             #+#    #+#             */
-/*   Updated: 2022/05/27 11:34:13 by kyuzu            ###   ########.fr       */
+/*   Updated: 2022/05/29 18:02:55 by kyuzu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*get_next_line(int fd)
 {

@@ -6,11 +6,11 @@
 /*   By: kyuzu <kyuzu@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 11:07:38 by kyuzu             #+#    #+#             */
-/*   Updated: 2022/05/27 11:07:41 by kyuzu            ###   ########.fr       */
+/*   Updated: 2022/05/29 18:03:10 by kyuzu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_strdup(const char *s1)
 {
