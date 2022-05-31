@@ -6,7 +6,7 @@
 /*   By: kyuzu <kyuzu@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 09:52:37 by kyuzu             #+#    #+#             */
-/*   Updated: 2022/05/29 18:02:55 by kyuzu            ###   ########.fr       */
+/*   Updated: 2022/05/31 19:38:40 by kyuzu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 char	*get_next_line(int fd)
 {
-	static char	*save[256] = {NULL};
+	static char	*save[10240] = {NULL};
 	char		*buff;
 	t_line		line;
 	int			flag;
 
+	if (fd < 0 || 10240 <= fd)
+		return (NULL);
 	if (prepare_and_check(fd, &save[fd], &buff, &line) == FAIL)
 		return (NULL);
 	while (1)
@@ -39,7 +41,7 @@ int	prepare_and_check(int fd, char **save, char **buff, t_line *line)
 		return (FAIL);
 	*buff = NULL;
 	line->str = NULL;
-	*buff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	*buff = malloc(sizeof(char) * ((size_t)BUFFER_SIZE + 1));
 	if (*buff == NULL)
 		return (FAIL);
 	if (*save != NULL)
@@ -53,9 +55,9 @@ int	prepare_and_check(int fd, char **save, char **buff, t_line *line)
 
 int	read_fd(int fd, char *buff, t_line *line)
 {
-	int	readn;
+	ssize_t	readn;
 
-	initbuff(BUFFER_SIZE + 1, buff);
+	initbuff((size_t)BUFFER_SIZE + 1, buff);
 	readn = read(fd, buff, BUFFER_SIZE);
 	if (readn == -1)
 		return (FAIL);
